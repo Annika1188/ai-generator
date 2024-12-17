@@ -16,6 +16,10 @@ function generateFact(event) {
   let prompt = `User instructions: Generate a fun fact about ${instructionsInput.value}`;
   let apiURL = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
 
+  let answerElement = document.querySelector("#answer");
+  answerElement.classList.remove("hidden");
+  answerElement.innerHTML = `<div class="generating">⏳ Finding you a fun fact! ${instructionsInput.value}</div>`;
+
   axios.get(apiURL).then(displayFact);
 }
 
