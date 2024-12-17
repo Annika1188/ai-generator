@@ -18,7 +18,7 @@ function generateFact(event) {
 
   let answerElement = document.querySelector("#answer");
   answerElement.classList.remove("hidden");
-  answerElement.innerHTML = `<div class="generating">⏳ Finding you a fun fact! ${instructionsInput.value}</div>`;
+  answerElement.innerHTML = `<div class="generating">⏳ Finding you a fun fact about ${instructionsInput.value}!</div>`;
 
   axios.get(apiURL).then(displayFact);
 }
